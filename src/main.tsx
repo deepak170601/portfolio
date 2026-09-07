@@ -16,7 +16,7 @@ if (!container) {
 
 createRoot(container).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/portfolio">
       <App />
     </BrowserRouter>
   </StrictMode>,
