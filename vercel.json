@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "//": "Only extensionless paths are routes. Without this a missing file such as /resume.pdf would serve index.html, and a download link would save that HTML under a .pdf name instead of failing honestly.",
+      "source": "/((?!.*\\.).*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}
